@@ -1,0 +1,161 @@
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.container {
+  background: linear-gradient(
+    89deg,
+    rgb(3, 48, 146) 0.1%,
+    rgb(34, 44, 185) 51.5%,
+    rgb(4, 118, 248) 100.2%
+  );
+
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding: 40px 20px;
+  border: 3px solid #e2c9cc;
+  border-radius: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+  box-shadow: 1px 2px 3px 0.5px grey;
+}
+
+.heading {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 60px;
+  color: #71d2f8;
+  text-shadow: 3px 2px 1px black;
+}
+
+.searchCity {
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: italic;
+
+  width: 79%;
+
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+
+  margin-bottom: 10px;
+}
+
+.searchButton {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: black;
+  background-color: #dfd4d5;
+
+  border: 1px solid #e2c9cc;
+  border-radius: 0.25rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.searchButton:hover {
+  border-color: #fff;
+  background-color: white;
+  color: black;
+}
+
+.locationIcon {
+  font-size: 25px;
+  padding: 0 8px 0 8px;
+  background-color: #dfd4d5;
+  border: none;
+}
+
+.locationIcon:hover {
+  background-color: white;
+}
+.currentDate {
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cityEntered,
+.flag {
+  font-family: Haettenschweiler, Impact, "Arial Narrow Bold", sans-serif;
+  font-size: 50px;
+  color: #71d2f8;
+}
+
+.cityEntered {
+  text-shadow: 3px 2px 1px black;
+}
+
+.unitC {
+  border-radius: 35px 0px 0px 35px;
+}
+
+.unitF {
+  border-radius: 0px 35px 35px 0px;
+}
+
+.unitC,
+.unitF {
+  background-color: black;
+  color: #71d2f8;
+  box-shadow: 1px 1px 2px rgb(128, 128, 128);
+  border: 1px solid #71d2f8;
+  position: relative;
+  top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.unitC:hover,
+.unitF:hover {
+  background-color: #71d2f8;
+  color: black;
+  box-shadow: 1px 1px 2px black;
+}
+
+.tempDisplay {
+  font-family: Haettenschweiler, Impact, "Arial Narrow Bold", sans-serif;
+  font-size: 80px;
+  color: #71d2f8;
+  text-shadow: 3px 2px 1px black;
+}
+
+.divider {
+  color: #71d2f8;
+  font-size: 20px;
+}
+
+.looksLike {
+  text-transform: capitalize;
+}
+
+.emoji {
+  font-size: 250px;
+  text-align: center;
+
+  line-height: 480px;
+}
+.forcast {
+  margin-inline-end: 4px;
+  margin-inline-start: 4px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 30px;
+  border: 1px solid #e2c9cc;
+  border-radius: 30px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+.forcastEmoji {
+  font-size: 60px;
+}
+.forcastTemp {
+  font-size: 14px;
+}
