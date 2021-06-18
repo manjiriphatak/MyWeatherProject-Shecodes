@@ -118,6 +118,13 @@ body {
   color: black;
   box-shadow: 1px 1px 2px black;
 }
+.active {
+  background-color: #71d2f8;
+  color: black;
+}
+.active:hover {
+  cursor: default;
+}
 
 .tempDisplay {
   font-family: Haettenschweiler, Impact, "Arial Narrow Bold", sans-serif;
