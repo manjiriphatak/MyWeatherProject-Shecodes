@@ -142,11 +142,10 @@ body {
   text-transform: capitalize;
 }
 
-.emoji {
-  font-size: 250px;
-  text-align: center;
-
-  line-height: 480px;
+.mainIcon {
+  margin: 0 auto;
+  cursor: default;
+  padding-top: 100px;
 }
 .forcast {
   margin-inline-end: 4px;

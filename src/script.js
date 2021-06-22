@@ -1,5 +1,3 @@
-//code to display date-begins
-
 let now = new Date();
 let days = [
   "Sunday",
@@ -93,6 +91,9 @@ function showTemp(response) {
   let sunset = document.querySelector("#sunset-time");
   let sunsetTime = formatTime(response.data.sys.sunset * 1000);
   sunset.innerHTML = sunsetTime;
+
+  let mainicon = document.querySelector("#icon");
+  mainicon.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
 }
 function convertToFahren(event) {
   event.preventDefault();
