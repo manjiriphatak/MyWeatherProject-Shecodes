@@ -148,22 +148,21 @@ body {
   padding-top: 100px;
 }
 .forcast {
-  margin-inline-end: 4px;
-  margin-inline-start: 4px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  width: 30px;
+  padding: 8px;
+  margin-right: 5px;
+  margin-left: 5px;
+
   border: 1px solid #e2c9cc;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 18px;
   color: white;
   text-align: center;
 }
 .forcastEmoji {
-  font-size: 60px;
+  padding-top: 10px;
 }
 .forcastTemp {
-  font-size: 14px;
+  font-size: 18px;
 }
 .openSourceCode {
   color: #161e20;

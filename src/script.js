@@ -139,6 +139,32 @@ function city(event) {
   axios.get(apiUrl).then(showTemp);
 }
 
+function weatherForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHtml = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+          <div class="col forcast">
+            ${day}
+            <div class="forcastEmoji"> 
+            <input
+            type="image"
+            src="icons/01d.png"
+            width="60px"
+          /></div>
+            <div class="forcastTemp">
+              <span class="maxTemp">22</span>°/ <span class="minTemp">9</span>°C
+            </div>
+          </div>
+        `;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
 function showCurrentLocationWeather() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
@@ -160,3 +186,4 @@ let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", convertToCelsius);
 
 showCurrentLocationWeather();
+weatherForecast();
