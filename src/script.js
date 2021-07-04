@@ -65,6 +65,13 @@ function getLocalTemperature(response) {
 
 function showTemp(response) {
   console.log(response);
+
+  let cityDisplay = document.querySelector("#city-display");
+
+  let cityName = response.data.name;
+  cityName = cityName.toUpperCase();
+  cityDisplay.innerHTML = cityName;
+
   celsiusTemperature = Math.round(response.data.main.temp);
   let temperatureDisplay = document.querySelector("#current-temp");
   temperatureDisplay.innerHTML = `${celsiusTemperature}`;
@@ -124,21 +131,19 @@ function convertToCelsius(event) {
   wind.innerHTML = `${showWind} Km/Hr`;
 }
 
-function city(event) {
-  event.preventDefault();
-  let citySearch = document.querySelector("#city-text-input");
-  let cityDisplay = document.querySelector("#city-display");
-  let city = citySearch.value;
-  city = city.toUpperCase();
-  cityDisplay.innerHTML = city;
-
+function city(city) {
   let apiKey = "b433aea7f2b3444f708346b87eb93b9d";
   let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch.value}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(showTemp);
 }
 
+function searchSubmit(event) {
+  event.preventDefault();
+  let citySearch = document.querySelector("#city-text-input");
+  city(citySearch.value);
+}
 function weatherForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHtml = `<div class="row">`;
@@ -152,7 +157,7 @@ function weatherForecast() {
             <div class="forcastEmoji"> 
             <input
             type="image"
-            src="icons/01d.png"
+            src="icons/01n.png"
             width="60px"
           /></div>
             <div class="forcastTemp">
@@ -161,7 +166,7 @@ function weatherForecast() {
           </div>
         `;
   });
-
+  forecastHtml = forecastHtml + `</div>`;
   forecastElement.innerHTML = forecastHtml;
 }
 
@@ -174,7 +179,7 @@ let feelsLikeTemp = null;
 let showWind = null;
 
 let form = document.querySelector("#city-entered");
-form.addEventListener("submit", city);
+form.addEventListener("submit", searchSubmit);
 
 let currentLocationWeather = document.querySelector("#current-location-icon");
 currentLocationWeather.addEventListener("click", showCurrentLocationWeather);
@@ -185,5 +190,5 @@ fahrenTemp.addEventListener("click", convertToFahren);
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", convertToCelsius);
 
-showCurrentLocationWeather();
 weatherForecast();
+city("toronto");
