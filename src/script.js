@@ -63,11 +63,20 @@ function getLocalTemperature(response) {
   showTemp(response);
 }
 
+function forecastCoords(coordinates) {
+  console.log(coordinates);
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiKey = "b433aea7f2b3444f708346b87eb93b9d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(weatherForecast);
+}
+
 function showTemp(response) {
   console.log(response);
 
   let cityDisplay = document.querySelector("#city-display");
-
   let cityName = response.data.name;
   cityName = cityName.toUpperCase();
   cityDisplay.innerHTML = cityName;
@@ -101,6 +110,8 @@ function showTemp(response) {
 
   let mainicon = document.querySelector("#icon");
   mainicon.setAttribute("src", `icons/${response.data.weather[0].icon}.png`);
+
+  forecastCoords(response.data.coord);
 }
 function convertToFahren(event) {
   event.preventDefault();
@@ -144,7 +155,8 @@ function searchSubmit(event) {
   let citySearch = document.querySelector("#city-text-input");
   city(citySearch.value);
 }
-function weatherForecast() {
+function weatherForecast(response) {
+  console.log(response);
   let forecastElement = document.querySelector("#forecast");
   let forecastHtml = `<div class="row">`;
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -190,5 +202,4 @@ fahrenTemp.addEventListener("click", convertToFahren);
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", convertToCelsius);
 
-weatherForecast();
 city("toronto");
