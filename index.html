@@ -14,6 +14,13 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -56,23 +63,12 @@
 
           <div class="city">
             <span class="cityEntered" id="city-display"></span>
-            <span class="flag"> </span>
           </div>
 
           <div class="row temp">
-            <span class="col-2 tempDisplay" id="current-temp"></span>
-            <span class="col-10 unitButtons">
-              <span>
-                <button a href="#" class="unitC active" id="celsius">
-                  °C
-                </button></span
-              >
-
-              <span
-                ><button a href="#" class="unitF" id="fahrenheit">
-                  °F
-                </button></span
-              ></span
+            <span class="col tempDisplay" id="current-temp"></span>
+            <span class="col-10">
+              <button a href="#" class="unitC" id="celsius">°C</button></span
             >
           </div>
           <div class="looksLike">

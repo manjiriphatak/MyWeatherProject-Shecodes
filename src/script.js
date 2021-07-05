@@ -103,34 +103,6 @@ function showTemp(response) {
 
   forecastCoords(response.data.coord);
 }
-function convertToFahren(event) {
-  event.preventDefault();
-  celsiusTemp.classList.remove("active");
-  fahrenTemp.classList.add("active");
-  let displayTemperature = document.querySelector("#current-temp");
-  let fahTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
-  let feelsLike = document.querySelector("#feels-like");
-  let feelsLikeTempF = Math.round((feelsLikeTemp * 9) / 5 + 32);
-  let wind = document.querySelector("#wind");
-  let showWindSpeed = Math.round(showWind / 1.609);
-
-  displayTemperature.innerHTML = `${fahTemperature}`;
-  feelsLike.innerHTML = `Feels Like ${feelsLikeTempF}°F`;
-  wind.innerHTML = `${showWindSpeed} Miles/Hr`;
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  celsiusTemp.classList.add("active");
-  fahrenTemp.classList.remove("active");
-  let displayTemperature = document.querySelector("#current-temp");
-  let feelsLike = document.querySelector("#feels-like");
-  let wind = document.querySelector("#wind");
-
-  displayTemperature.innerHTML = `${celsiusTemperature}`;
-  feelsLike.innerHTML = `Feels Like ${feelsLikeTemp}°C`;
-  wind.innerHTML = `${showWind} Km/Hr`;
-}
 
 function city(city) {
   let apiKey = "b433aea7f2b3444f708346b87eb93b9d";
@@ -211,11 +183,5 @@ form.addEventListener("submit", searchSubmit);
 
 let currentLocationWeather = document.querySelector("#current-location-icon");
 currentLocationWeather.addEventListener("click", showCurrentLocationWeather);
-
-let fahrenTemp = document.querySelector("#fahrenheit");
-fahrenTemp.addEventListener("click", convertToFahren);
-
-let celsiusTemp = document.querySelector("#celsius");
-celsiusTemp.addEventListener("click", convertToCelsius);
 
 city("toronto");

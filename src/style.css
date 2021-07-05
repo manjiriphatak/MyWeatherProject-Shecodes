@@ -21,7 +21,7 @@ body {
 }
 
 .heading {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Comfortaa", cursive;
   font-size: 60px;
   color: #71d2f8;
   text-shadow: 3px 2px 1px black;
@@ -82,9 +82,8 @@ body {
   font-weight: 500;
 }
 
-.cityEntered,
-.flag {
-  font-family: Haettenschweiler, Impact, "Arial Narrow Bold", sans-serif;
+.cityEntered {
+  font-family: "Comfortaa", cursive;
   font-size: 50px;
   color: #71d2f8;
 }
@@ -94,40 +93,17 @@ body {
 }
 
 .unitC {
-  border-radius: 35px 0px 0px 35px;
-}
-
-.unitF {
-  border-radius: 0px 35px 35px 0px;
-}
-
-.unitC,
-.unitF {
-  background-color: black;
-  color: #71d2f8;
+  border-radius: 80px;
+  background-color: #71d2f8;
+  color: black;
   box-shadow: 1px 1px 2px rgb(128, 128, 128);
   border: 1px solid #71d2f8;
   position: relative;
   top: 20px;
-  transition: all 0.3s ease-in-out;
-}
-
-.unitC:hover,
-.unitF:hover {
-  background-color: #71d2f8;
-  color: black;
-  box-shadow: 1px 1px 2px black;
-}
-.active {
-  background-color: #71d2f8;
-  color: black;
-}
-.active:hover {
-  cursor: default;
 }
 
 .tempDisplay {
-  font-family: Haettenschweiler, Impact, "Arial Narrow Bold", sans-serif;
+  font-family: "Comfortaa", cursive;
   font-size: 80px;
   color: #71d2f8;
   text-shadow: 3px 2px 1px black;
@@ -160,6 +136,7 @@ body {
 }
 .forcastEmoji {
   padding-top: 10px;
+  cursor: default;
 }
 .forcastTemp {
   font-size: 18px;
