@@ -26,10 +26,22 @@ let month = months[now.getMonth()];
 let date = now.getDate();
 let day = days[now.getDay()];
 let year = now.getFullYear();
-let time = now.getHours();
+let hours = now.getHours();
+let unit = "";
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+if (hours > 12) {
+  unit = "PM";
+} else {
+  unit = "AM";
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let updateDate = document.querySelector("#todaysdate");
-let displayDate = `${day}, ${date} ${month}, ${year}, ${time}:${minutes}`;
+let displayDate = `${day}, ${date} ${month}, ${year}, ${hours}:${minutes} ${unit}`;
 updateDate.innerHTML = displayDate;
 
 function formatTime(timestamp) {
@@ -46,7 +58,6 @@ function formatTime(timestamp) {
 }
 
 function handlePosition(position) {
-  console.log(position);
   let showLatitude = position.coords.latitude;
   let showLongitude = position.coords.longitude;
   let apiKey = "b433aea7f2b3444f708346b87eb93b9d";
@@ -64,8 +75,6 @@ function getLocalTemperature(response) {
 }
 
 function showTemp(response) {
-  console.log(response);
-
   let cityDisplay = document.querySelector("#city-display");
   let cityName = response.data.name;
   cityName = cityName.toUpperCase();
@@ -108,7 +117,6 @@ function city(city) {
   let apiKey = "b433aea7f2b3444f708346b87eb93b9d";
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(showTemp);
 }
 
@@ -126,7 +134,6 @@ function formatday(timestamp) {
   return day;
 }
 function weatherForecast(response) {
-  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecast = response.data.daily;
@@ -162,12 +169,10 @@ function weatherForecast(response) {
 }
 
 function forecastCoords(coordinates) {
-  console.log(coordinates);
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let apiKey = "b433aea7f2b3444f708346b87eb93b9d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(weatherForecast);
 }
 function showCurrentLocationWeather() {

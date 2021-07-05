@@ -86,20 +86,18 @@ body {
   font-family: "Comfortaa", cursive;
   font-size: 50px;
   color: #71d2f8;
-}
 
-.cityEntered {
   text-shadow: 3px 2px 1px black;
 }
 
 .unitC {
-  border-radius: 80px;
-  background-color: #71d2f8;
-  color: black;
-  box-shadow: 1px 1px 2px rgb(128, 128, 128);
-  border: 1px solid #71d2f8;
+  color: #71d2f8;
+  font-size: 20px;
+  font-family: "Comfortaa", cursive;
+  font-weight: 500;
   position: relative;
-  top: 20px;
+  top: -50px;
+  text-shadow: 3px 2px 1px black;
 }
 
 .tempDisplay {
@@ -120,6 +118,7 @@ body {
 
 .mainIcon {
   margin: 0 auto;
+
   cursor: default;
   padding-top: 100px;
 }
